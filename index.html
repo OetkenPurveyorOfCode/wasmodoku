@@ -1,0 +1,89 @@
+<html>
+    <head>
+        <title>Sudoku solver</title>
+        <style>
+            body{
+                font-family: Avenir, Heveltica, sans-serif;
+            }
+            .sudoku {
+                float : left;
+                display: grid;
+                grid-template-columns: repeat(9, 5vw);
+                grid-template-rows: repeat(9, 5vw);
+                justify-content: center;
+                align-content: center;
+                grid-gap: 0rem;
+                list-style: none;
+                margin: 0 0 2vw;
+                padding: 0;
+            }
+            .sudoku-cell {
+                font-size: 4vw;
+                margin: 0;
+                padding: 0;
+                text-align: center;
+                border: 1px solid black;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+            }
+            
+
+            .sudoku-cell:nth-child(n):nth-child(-n+9) {
+                border-top-width: 4px;
+            }
+            .sudoku-cell:nth-child(n+73):nth-child(-n+81) {
+                border-bottom-width: 4px;
+
+            }
+            .sudoku-cell:nth-child(3n) {
+                border-right-width: 4px;
+
+            }
+            .sudoku-cell:nth-child(9n+1) {
+                border-left-width: 4px;
+
+            }
+            .sudoku-cell:nth-child(n+19):nth-child(-n+27) {
+                border-bottom-width: 4px;
+            }
+            .sudoku-cell:nth-child(n+46):nth-child(-n+54) {
+                border-bottom-width: 4px;
+            }
+            .side {
+                float: left;
+            }
+            #result {
+                font-size: 4vw;
+                padding: 2vw;
+                margin-left: 4vw;
+                border-radius: 2vw;
+            }
+            .submit-button {
+                font-size: 4vw;
+                padding: 2vw;
+                background-color: #404080;
+                color: white;
+                margin-left: 4vw;
+                border-radius: 2vw;
+                border: none;
+            }
+            .main {
+                grid-gap: 2vw;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="main">
+            <form class="sudoku" id="sudoku_grid">
+            </form>
+            <div class="side">
+                <button id="submit-button" class="submit-button">Solve</button>
+                <div id="result"></div>
+                
+            </div>
+            
+        </div>
+        <script src="index.js"></script>
+    </body>
+</html>
